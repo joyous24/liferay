@@ -12,7 +12,7 @@ import com.liferay.jetty.JettyUtil;
  * 
  * @author ZhaoXQ 2015-04-07
  */
-public class JettyTestServer {
+public class JettyServer {
 	public static void main(String[] args) throws Exception {
 		String webapp = "src/main/webapp";
 		String host = "localhost";
