@@ -1,0 +1,34 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+	<!-- 不过滤资源 -->
+	<http pattern="/jsp/admin/*" security="none"/>
+	<http pattern="/js/**" security="none"/>
+	<http pattern="/css/**" security="none"/>
+	<http pattern="/images/**" security="none"/>
+	
+	<http auto-config="true" use-expressions="false">
+		<intercept-url pattern="/**" access="ROLE_USER" />
+		<form-login login-page="/jsp/admin/login.jsp" 
+					login-processing-url="/login"
+		            username-parameter="username" 
+		            password-parameter="password"
+		            default-target-url="/jsp/admin/home.jsp"
+		            always-use-default-target="true"
+		            />
+		<logout />
+		<!-- csrf攻击防御 -->
+		<csrf disabled="true" />
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider user-service-ref="myUserDetailsService" />
+	</authentication-manager>
+
+	<beans:bean id="myUserDetailsService"
+		class="com.liferay.admin.security.MyUserDetailsService" /> 
+
+</beans:beans>
