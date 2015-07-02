@@ -1,0 +1,65 @@
+{
+    "text": ".",
+    "children": [
+        {
+        	"organization" : '研发部',
+            "iconCls": "task-folder",
+            "checked":false,
+            "expanded": true,
+            "children": [{
+            	"organization" : '研发部',
+	            "userAccount" : "admin",
+	            "userName" : "张三",
+	            "mobile" : "13261898456",
+	            "email" : "mascot417@126.com",
+	            "state" : "正常",
+	            "createTime" : "2015-06-30 18：01",
+	            "loginTime" : "2015-06-30 18：01",
+	            "lastLoginTime" : "2015-06-30 18：01",
+	            "loginCount" : "10",
+            	"expanded": true,
+            	"organization" : '研发部',
+            	"children": [{
+		            "userAccount" : "admin",
+		            "userName" : "张三",
+		            "mobile" : "13261898456",
+		            "email" : "mascot417@126.com",
+		            "state" : "正常",
+		            "createTime" : "2015-06-30 18：01",
+		            "loginTime" : "2015-06-30 18：01",
+		            "lastLoginTime" : "2015-06-30 18：01",
+		            "loginCount" : "10",
+		            "iconCls": "task-folder",
+	            	"leaf": true
+		            },{
+		            	"organization" : '研发部',
+			            "userAccount" : "admin",
+			            "userName" : "张三",
+			            "mobile" : "13261898456",
+			            "email" : "mascot417@126.com",
+			            "state" : "正常",
+			            "createTime" : "2015-06-30 18：01",
+			            "loginTime" : "2015-06-30 18：01",
+			            "lastLoginTime" : "2015-06-30 18：01",
+			            "loginCount" : "10",
+			            "iconCls": "task-folder",
+		            	"leaf": true
+		            }]
+            },{
+            	"organization" : '研发部',
+	            "userAccount" : "admin",
+	            "userName" : "张三",
+	            "mobile" : "13261898456",
+	            "email" : "mascot417@126.com",
+	            "state" : "正常",
+	            "createTime" : "2015-06-30 18：01",
+	            "loginTime" : "2015-06-30 18：01",
+	            "lastLoginTime" : "2015-06-30 18：01",
+	            "loginCount" : "10",
+	            "iconCls": "task-folder",
+            	"leaf": true
+            }]
+            
+        }
+    ]
+}

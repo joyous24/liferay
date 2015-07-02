@@ -1,12 +1,76 @@
 /* °´Å¥Í¼±ê */
-.exit {
-	background-image: url(/images/exit.png) !important;
+.sys_exit {
+	background-image: url(/images/sys_exit.png) !important;
 }
 
-.help {
-	background-image: url(/images/help.png) !important;
+.sys_help {
+	background-image: url(/images/sys_help.png) !important;
 }
 
-.key {
-	background-image: url(/images/key.png) !important;
+.sys_key {
+	background-image: url(/images/sys_key.png) !important;
+}
+
+.sys_user {
+	background-image: url(/images/sys_user.png) !important;
+}
+
+.sys_organization {
+	background-image: url(/images/sys_organization.png) !important;
+}
+
+.sys_group {
+	background-image: url(/images/sys_group.png) !important;
+}
+
+.sys_roles {
+	background-image: url(/images/sys_roles.png) !important;
+}
+
+.sys_authorities {
+	background-image: url(/images/sys_authorities.png) !important;
+}
+
+.sys_dictionary {
+	background-image: url(/images/sys_dictionary.png) !important;
+}
+
+.sys_log {
+	background-image: url(/images/sys_log.png) !important;
+}
+
+.sys_menu {
+	background-image: url(/images/sys_menu.png) !important;
+}
+
+.sys_common {
+	background-image: url(/images/sys_common.png) !important;
+}
+
+.sys_set {
+	background-image: url(/images/sys_set.png) !important;
+}
+
+.form_query {
+	background-image: url(/images/form_query.png) !important;
+}
+
+.form_add {
+	background-image: url(/images/form_add.png) !important;
+}
+
+.form_delete {
+	background-image: url(/images/form_delete.png) !important;
+}
+
+.form_edit {
+	background-image: url(/images/form_edit.png) !important;
+}
+
+.form_details {
+	background-image: url(/images/form_details.png) !important;
+}
+
+.form_save {
+	background-image: url(/images/form_save.png) !important;
 }

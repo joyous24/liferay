@@ -4,11 +4,12 @@
  * @author zxq
  * @data 2015-06-26
  */
-Ext.require(['*']);
+Ext.require(['Ext.tab.Panel', 'Ext.data.TreeStore', 'Ext.tree.Panel',
+		'Ext.Viewport', 'Ext.Component']);
 Ext.onReady(function() {
 	Ext.QuickTips.init();
 	// --------------------中间面板 Tab 选项卡------------------------
-	var tabPanel = new Ext.tab.Panel({
+	var tabPanel = Ext.create('Ext.tab.Panel', {
 				deferredRender : false,
 				activeTab : 0,
 				plugins : new Ext.create('Ext.ux.TabCloseMenu', {
@@ -23,7 +24,7 @@ Ext.onReady(function() {
 						}]
 			});
 
-	// --------------------常用工具------------------------
+	// --------------------辅助工具------------------------
 	var commonStore = Ext.create('Ext.data.TreeStore', {
 				root : {
 					expanded : true,
@@ -31,17 +32,17 @@ Ext.onReady(function() {
 								text : "修改密码",
 								id : 'key',
 								leaf : true,
-								iconCls : 'key'
+								iconCls : 'sys_key'
 							}, {
 								text : "帮助",
 								id : 'help',
 								leaf : true,
-								iconCls : 'help'
+								iconCls : 'sys_help'
 							}, {
 								text : "退出系统",
 								id : 'exit',
 								leaf : true,
-								iconCls : 'exit'
+								iconCls : 'sys_exit'
 							}]
 				}
 			});
@@ -55,21 +56,72 @@ Ext.onReady(function() {
 			});
 
 	commonTree.on('itemclick', function(me, record, item, index, e, eOpts) {
-				if (record.get('leaf')) {
-					var id = record.get('id');
-					if (id == 'key') { // 修改密码
-						addTab('user', '用户管理', 'user.jsp');
-					} else if (id == 'help') {// 帮助
+				treeItemClick(record);
+			});
 
-					} else if (id == 'exit') {// 帮助
+	// --------------------系统管理------------------------
+	var sysStore = Ext.create('Ext.data.TreeStore', {
+				root : {
+					expanded : true,
+					children : [{
+								text : "用户管理",
+								id : 'user',
+								leaf : true,
+								iconCls : 'sys_user'
+							}, {
+								text : "组织机构",
+								id : 'organization',
+								leaf : true,
+								iconCls : 'sys_organization'
+							}, {
+								text : "组管理",
+								id : 'group',
+								leaf : true,
+								iconCls : 'sys_group'
+							}, {
+								text : "角色管理",
+								id : 'roles',
+								leaf : true,
+								iconCls : 'sys_roles'
+							}, {
+								text : "权限管理",
+								id : 'authorities',
+								leaf : true,
+								iconCls : 'sys_authorities'
+							}, {
+								text : "菜单导航",
+								id : 'menu',
+								leaf : true,
+								iconCls : 'sys_menu'
+							}, {
+								text : "数据字典",
+								id : 'dictionary',
+								leaf : true,
+								iconCls : 'sys_dictionary'
+							}, {
+								text : "系统日志",
+								id : 'log',
+								leaf : true,
+								iconCls : 'sys_log'
+							}]
+				}
+			});
 
-					}// end if
-				}// end if
+	var sysTree = Ext.create('Ext.tree.Panel', {
+				useArrows : true,
+				colspan : 2,
+				store : sysStore,
+				rootVisible : false,
+				border : false
+			});
+
+	sysTree.on('itemclick', function(me, record, item, index, e, eOpts) {
+				treeItemClick(record);
 
 			});
 
 	// --------------------布局界面------------------------
-	var viewport = new Ext.Viewport({
+	var viewport = Ext.create('Ext.Viewport', {
 		layout : "border",
 		items : [Ext.create('Ext.Component', {
 			// 顶部面板
@@ -93,17 +145,22 @@ Ext.onReady(function() {
 			margins : '0 0 0 5',
 			layout : 'accordion',
 			items : [{
-				title : '用户管理'
-					// items : tree
-				}, {
-				title : '常用工具',
-				items : commonTree
-			}]
+						title : '系统管理',
+						iconCls : 'sys_set',
+						items : sysTree
+					}, {
+						title : '辅助工具',
+						iconCls : 'sys_common',
+						items : commonTree
+					}]
 		}, {
 			// 中间面板
 			region : 'center',
+			layout : 'fit',
+			border : false,
 			items : tabPanel
 		}, Ext.create('Ext.Component', {
+			// 底部面板
 			region : 'south',
 			height : 32,
 			margins : '5 5 -10 5',
@@ -119,22 +176,34 @@ Ext.onReady(function() {
 	/**
 	 * 添加tab
 	 */
-	function addTab(id, title, url) {
-		var iframe = Ext.create('Ext.ux.IFrame', {
-					src : url
-				});
+	function addTab(id, title, url, iconCls) {
 		if (tabPanel.child('#' + id) == null) {
 			tabPanel.add([{
-						title : title,
-						closable : true,
-						autoScroll : true,
-						items : iframe,
-						itemId : id
-					}]);
+				title : title,
+				closable : true,
+				autoScroll : true,
+				itemId : id,
+				iconCls : iconCls,
+				html : '<iframe src="'
+						+ url
+						+ '" width="100%" height="100%" frameborder="0"></iframe>'
+			}]);
 		}// end if
 		var tab = tabPanel.child('#' + id);
 		tab.tab.show();
 		tabPanel.setActiveTab(tab);
+	}
+
+	/**
+	 * 树菜单点击跳转页面
+	 * 
+	 * @description treeItemClick(record);
+	 */
+	function treeItemClick(record) {
+		if (record.get('leaf')) {
+			var id = record.get('id');
+			addTab(id, record.get('text'), id + ".jsp", record.get('iconCls'));
+		}
 	}
 
 });

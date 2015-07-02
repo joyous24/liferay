@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户管理</title>
-<script type="text/javascript" src="js/user.js"></script>
+<title>角色管理</title>
+<script type="text/javascript" src="js/roles.js"></script>
 </head>
 <body>
 </body>

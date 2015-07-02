@@ -22,7 +22,7 @@
 <link  rel="stylesheet"  href="<%=basePath%>js/ext4.2/resources/css/ext-all-neptune.css"/>
 <script type="text/javascript" src="<%=basePath%>js/ext4.2/bootstrap.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/ext4.2/locale/ext-lang-zh_CN.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/ext4.2/ux/IFrame.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/ext4.2/ux/ProgressBarPager.js"></script>
 
 <!-- jquery -->
 <script type="text/javascript" src="<%=basePath%>js/jquery1.11.3.min.js"></script>
