@@ -10,8 +10,19 @@ Ext.onReady(function() {
 			// --------------------表格展示列表------------------------
 			var store = Ext.create('Ext.data.TreeStore', {
 						folderSort : true,
-						fields : ['organizationName', 'crateDate','description']
-
+						fields : ['organizationName', 'crateDate',
+								'description'],
+						proxy : {
+							type : 'ajax',
+							reader : {
+								type : 'json',
+								root : 'root'
+							},
+							actionMethods : {
+								read : 'POST'
+							},
+							url : '/organization/organizationTreeList.do'
+						}
 					});
 
 			var grid = Ext.create('Ext.tree.Panel', {

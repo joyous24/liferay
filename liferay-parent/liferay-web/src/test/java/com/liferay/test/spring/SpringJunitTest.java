@@ -5,26 +5,22 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.liferay.admin.service.UserService;
-import com.liferay.admin.service.UserServiceImpl;
-import com.liferay.admin.vo.User;
+import com.liferay.admin.service.OrganizationService;
+import com.liferay.admin.service.OrganizationServiceImpl;
+import com.liferay.admin.vo.OrganizationVO;
 import com.liferay.test.util.SpringTestUtil;
 
 public class SpringJunitTest {
 
-	private UserService userService;
+	private OrganizationService userService;
 
 	@Before
 	public void before() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(SpringTestUtil.springConfigLocations());
-		userService = (UserServiceImpl) context.getBean("userServiceImpl");
+		userService = (OrganizationServiceImpl) context.getBean("userServiceImpl");
 	}
 
 	@Test
 	public void addUser() {
-		User user = new User();
-		user.setId(3);
-		user.setName("王五");
-		userService.addUser(user);
 	}
 }

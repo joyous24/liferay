@@ -10,7 +10,7 @@
 		<config>src/main/resources/META-INF/spring/context-datasource.xml</config>
 		<config>src/main/resources/META-INF/spring/context-bean.xml</config>
 		<config>src/main/resources/META-INF/spring/context-security.xml</config>
-		<config>src/main/resources/META-INF/spring/servlet-dispatcher.xml</config>
+		<config>src/main/resources/META-INF/spring/context-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/resources/META-INF/spring/context-common.xml</config>
