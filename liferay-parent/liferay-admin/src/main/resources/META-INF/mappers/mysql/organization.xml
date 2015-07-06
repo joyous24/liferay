@@ -8,10 +8,25 @@
 		<result property="description" column="DESCRIPTION" />
 		<result property="lft" column="LFT" />
 		<result property="rgt" column="RGT" />
+		<result property="depth" column="DEPTH" />
 	</resultMap>
 	<select id="getOrganizationList" parameterType="com.liferay.admin.vo.OrganizationVO"
 		resultMap="Organization-Result">
-		SELECT * FROM sys_organization
+		SELECT
+			node.*,
+			(
+				COUNT(parent.ORGANIZATION_NAME) - 1
+			) AS DEPTH
+		FROM
+			sys_organization AS node,
+			sys_organization AS parent
+		WHERE
+			node.lft BETWEEN parent.lft
+		AND parent.rgt
+		GROUP BY
+			node.ORGANIZATION_NAME
+		ORDER BY
+			node.lft;
 	</select>
 
 </mapper>

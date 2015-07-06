@@ -12,15 +12,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class MyUserDetailsService implements UserDetailsService {
 
-	@Override
 	public UserDetails loadUserByUsername(String arg0)throws UsernameNotFoundException {
 		GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_USER");
-		
+
 		List<GrantedAuthority> authorityList = new ArrayList<GrantedAuthority>();
 		authorityList.add(grantedAuthority);
-		
-		UserDetails user = new User("123","123",authorityList);
-		
+
+		UserDetails user = new User("123", "123", authorityList);
+
 		return user;
 	}
 

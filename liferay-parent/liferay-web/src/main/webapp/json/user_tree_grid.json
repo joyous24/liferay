@@ -2,64 +2,88 @@
     "text": ".",
     "children": [
         {
-        	"organization" : '研发部',
-            "iconCls": "task-folder",
-            "checked":false,
+            "organizationName": "ELECTRONICS",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "TELEVISIONS",
+            "description": "",
+            "children": [],
             "expanded": true,
-            "children": [{
-            	"organization" : '研发部',
-	            "userAccount" : "admin",
-	            "userName" : "张三",
-	            "mobile" : "13261898456",
-	            "email" : "mascot417@126.com",
-	            "state" : "正常",
-	            "createTime" : "2015-06-30 18：01",
-	            "loginTime" : "2015-06-30 18：01",
-	            "lastLoginTime" : "2015-06-30 18：01",
-	            "loginCount" : "10",
-            	"expanded": true,
-            	"organization" : '研发部',
-            	"children": [{
-		            "userAccount" : "admin",
-		            "userName" : "张三",
-		            "mobile" : "13261898456",
-		            "email" : "mascot417@126.com",
-		            "state" : "正常",
-		            "createTime" : "2015-06-30 18：01",
-		            "loginTime" : "2015-06-30 18：01",
-		            "lastLoginTime" : "2015-06-30 18：01",
-		            "loginCount" : "10",
-		            "iconCls": "task-folder",
-	            	"leaf": true
-		            },{
-		            	"organization" : '研发部',
-			            "userAccount" : "admin",
-			            "userName" : "张三",
-			            "mobile" : "13261898456",
-			            "email" : "mascot417@126.com",
-			            "state" : "正常",
-			            "createTime" : "2015-06-30 18：01",
-			            "loginTime" : "2015-06-30 18：01",
-			            "lastLoginTime" : "2015-06-30 18：01",
-			            "loginCount" : "10",
-			            "iconCls": "task-folder",
-		            	"leaf": true
-		            }]
-            },{
-            	"organization" : '研发部',
-	            "userAccount" : "admin",
-	            "userName" : "张三",
-	            "mobile" : "13261898456",
-	            "email" : "mascot417@126.com",
-	            "state" : "正常",
-	            "createTime" : "2015-06-30 18：01",
-	            "loginTime" : "2015-06-30 18：01",
-	            "lastLoginTime" : "2015-06-30 18：01",
-	            "loginCount" : "10",
-	            "iconCls": "task-folder",
-            	"leaf": true
-            }]
-            
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "TUBE",
+            "description": "",
+            "children": [
+                {
+                    "organizationName": "LCD",
+                    "description": "",
+                    "leaf": true,
+                    "crateDate": 1436012747000
+                },
+                {
+                    "organizationName": "PLASMA",
+                    "description": "",
+                    "leaf": true,
+                    "crateDate": 1436012747000
+                }
+            ],
+            "expanded": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "LCD",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "PLASMA",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "PORTABLE ELECTRONICS",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "MP3 PLAYERS",
+            "description": "",
+            "children": [],
+            "expanded": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "FLASH",
+            "description": "",
+            "children": [
+                {
+                    "organizationName": "2 WAY RADIOS",
+                    "description": "",
+                    "leaf": true,
+                    "crateDate": 1436012747000
+                }
+            ],
+            "expanded": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "CD PLAYERS",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
+        },
+        {
+            "organizationName": "2 WAY RADIOS",
+            "description": "",
+            "leaf": true,
+            "crateDate": 1436012747000
         }
     ]
 }

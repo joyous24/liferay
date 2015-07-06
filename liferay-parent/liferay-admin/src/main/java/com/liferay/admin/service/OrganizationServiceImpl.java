@@ -14,9 +14,9 @@ public class OrganizationServiceImpl implements OrganizationService {
 	@Autowired
 	private OrganizationDao organizationDao;
 
-	@Override
 	public List<OrganizationVO> getOrganizationList(OrganizationVO organization) {
 		return organizationDao.getOrganizationList(organization);
 	}
+
 
 }

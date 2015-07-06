@@ -7,8 +7,9 @@ public class OrganizationVO {
 	private String organizationName;
 	private Date createTime;
 	private String description;
-	private int lft;
 	private int rgt;
+	private int lft;
+	private int depth;
 
 	public int getOrganizationId() {
 		return organizationId;
@@ -42,6 +43,14 @@ public class OrganizationVO {
 		this.description = description;
 	}
 
+	public int getRgt() {
+		return rgt;
+	}
+
+	public void setRgt(int rgt) {
+		this.rgt = rgt;
+	}
+
 	public int getLft() {
 		return lft;
 	}
@@ -50,12 +59,12 @@ public class OrganizationVO {
 		this.lft = lft;
 	}
 
-	public int getRgt() {
-		return rgt;
+	public int getDepth() {
+		return depth;
 	}
 
-	public void setRgt(int rgt) {
-		this.rgt = rgt;
+	public void setDepth(int depth) {
+		this.depth = depth;
 	}
 
 }

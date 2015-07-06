@@ -14,32 +14,33 @@ Ext.onReady(function() {
 								'description'],
 						proxy : {
 							type : 'ajax',
+							url : '/admin/organization/organizationTreeList.json',
 							reader : {
-								type : 'json',
-								root : 'root'
+								type : 'json'
 							},
 							actionMethods : {
 								read : 'POST'
-							},
-							url : '/organization/organizationTreeList.do'
+							}
+							
 						}
 					});
 
 			var grid = Ext.create('Ext.tree.Panel', {
-						useArrows : true,
+						//useArrows : true,
 						rootVisible : false,
-						multiSelect : true,
-						singleExpand : true,
+						//multiSelect : true,
+						//singleExpand : true,
 						store : store,
 						defaults : {
 							autoScroll : true
 						},
-						selModel : Ext.create('Ext.selection.CheckboxModel', {
+						/*selModel : Ext.create('Ext.selection.CheckboxModel', {
 									mode : "SIMPLE"
-								}),
-						columns : [{
+								}),*/
+						columns : [/*{
 									xtype : "rownumberer"
-								}, {
+								}, */{
+									xtype : 'treecolumn',
 									text : '组织名称',
 									dataIndex : 'organizationName',
 									width : 150,

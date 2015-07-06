@@ -4,6 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{1FF2AD9C-3A96-4930-8807-C69922C134E3}" Loaded="No" Name="权限管理表结构" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="权限管理表结构.pdm"/>
 		<Model Expanded="Yes" ID="{1FF2AD9C-3A96-4930-8807-C69922C134E3}" Name="权限管理表结构" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="权限管理表结构.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>

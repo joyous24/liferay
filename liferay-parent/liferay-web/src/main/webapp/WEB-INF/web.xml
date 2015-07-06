@@ -38,8 +38,22 @@
 
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/admin/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>/home/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>/system/*</url-pattern>
+	</servlet-mapping>
+
+	<session-config> 
+	  <session-timeout>20</session-timeout>
+	</session-config>
 
 	<welcome-file-list>
 		<welcome-file>jsp/index.jsp</welcome-file>
